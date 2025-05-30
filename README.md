@@ -35,3 +35,39 @@ Experience the live version of the website here:
 * **JavaScript (ES6+):** For interactive elements such as the modal functionality, dynamic header background, and mobile navigation logic.
 
 ## Project Structure
+├── index.html
+├── style.css
+├── script.js
+├── README.md
+└── (other assets like images, if any)
+
+
+## How to Run Locally
+
+To get a local copy up and running, follow these simple steps.
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/AmanYadav007/Spotter.Ai-Homepage.git](https://github.com/AmanYadav007/Spotter.Ai-Homepage.git)
+    ```
+2.  **Navigate to the project directory:**
+    ```bash
+    cd Spotter.Ai-Homepage
+    ```
+3.  **Open `index.html`:**
+    Simply open the `index.html` file in your preferred web browser. All styles and scripts are linked locally.
+
+## Development & Customization
+
+* **Colors:** All primary and secondary colors are defined using CSS variables in `:root` for easy customization.
+* **Responsive Breakpoints:** Media queries are used to ensure responsiveness. Adjust breakpoints in `style.css` as needed.
+* **JavaScript Modules:** The JavaScript is organized into distinct functions for clarity and maintainability.
+
+---
+
+Feel free to explore the code and provide any feedback.
+
+---
+
+**Aman**
+[Your Portfolio Link (e.g., https://www.aguider.in/) ]
