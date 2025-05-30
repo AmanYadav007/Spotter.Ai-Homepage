@@ -196,7 +196,7 @@ class DriverModal {
                             "route": `${load.origin} → ${load.destination}`,
                             "rate": load.rate,
                             "distance": load.distance,
-                            "commodity": load.commodity,
+                            "commodity": "Electronics",
                             "pickupDate": load.pickupDate
                         })),
                         "averageMatchScore": this.loadData.reduce((sum, load) => sum + load.matchScore, 0) / this.loadData.length / 100,
@@ -305,7 +305,16 @@ function initLoadCardEffects() {
 function initResponsiveNav() {
     const navMenu = document.querySelector('.nav-menu');
     const navButtons = document.querySelector('.nav-buttons');
-    const navContent = document.querySelector('.nav-content'); // The parent containing logo, toggle, menu, buttons
+    const navContent = document.querySelector('.nav-content');
+    const header = document.querySelector('.header');
+
+    const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+
+    // Store original parent and next sibling for restoring on desktop
+    const originalNavMenuParent = navMenu.parentNode;
+    const originalNavMenuNextSibling = navMenu.nextSibling;
+    const originalNavButtonsParent = navButtons.parentNode;
+    const originalNavButtonsNextSibling = navButtons.nextSibling;
 
     // Remove any existing nav-toggle button to prevent duplicates
     const existingNavToggle = document.querySelector('.nav-toggle');
@@ -314,52 +323,73 @@ function initResponsiveNav() {
     }
 
     const navToggle = document.createElement('button');
-    navToggle.innerHTML = '☰'; // Hamburger icon
-    navToggle.className = 'nav-toggle'; // Class for styling
+    navToggle.innerHTML = '☰';
+    navToggle.className = 'nav-toggle';
 
-    // Add toggle button after logo section (or where appropriate in your header structure)
-    const logoSection = document.querySelector('.logo-section');
-    if (logoSection && logoSection.parentNode) {
-        // Insert navToggle directly into navContent, after logo-section
-        navContent.insertBefore(navToggle, navContent.querySelector('.nav-menu') || navContent.querySelector('.nav-buttons'));
+    // Append navToggle to navContent (main header container)
+    if (navContent) {
+        navContent.appendChild(navToggle);
     }
 
+    // Function to open mobile menu
+    function openMobileMenu() {
+        // Move navMenu and navButtons into the overlay *if they are not already there*
+        if (!mobileMenuOverlay.contains(navMenu)) {
+             mobileMenuOverlay.appendChild(navMenu);
+        }
+        if (!mobileMenuOverlay.contains(navButtons)) {
+             mobileMenuOverlay.appendChild(navButtons);
+        }
+       
+        mobileMenuOverlay.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        
+        requestAnimationFrame(() => {
+            mobileMenuOverlay.classList.add('is-open');
+        });
+        
+        navToggle.innerHTML = '✕'; // Change to a cross icon
+    }
 
-    // Function to close the mobile menu
+    // Function to close mobile menu
     function closeMobileMenu() {
-        navContent.classList.remove('is-open');
+        mobileMenuOverlay.classList.remove('is-open');
         document.body.style.overflow = 'auto'; // Re-enable scrolling on body
-        // Give a slight delay before removing 'mobile-nav-active' for transition
+
+        navToggle.innerHTML = '☰';
+
+        // Delay moving elements back to allow CSS transition to finish
         setTimeout(() => {
-            navContent.classList.remove('mobile-nav-active');
-            // Explicitly hide elements after transition completes if still on mobile
+            mobileMenuOverlay.style.display = 'none'; // Hide completely after animation
+
+            // Move navMenu and navButtons back to their original places if they aren't already
+            if (originalNavMenuParent && navMenu && mobileMenuOverlay.contains(navMenu)) {
+                originalNavMenuParent.insertBefore(navMenu, originalNavMenuNextSibling);
+            }
+            if (originalNavButtonsParent && navButtons && mobileMenuOverlay.contains(navButtons)) {
+                originalNavButtonsParent.insertBefore(navButtons, originalNavButtonsNextSibling);
+            }
+            
+            // Ensure they are hidden when mobile menu is closed on mobile (they should be, but as fallback)
             if (window.matchMedia('(max-width: 767px)').matches) {
                 navMenu.style.display = 'none';
                 navButtons.style.display = 'none';
             }
-        }, 400); // Match CSS transition duration
+        }, 400); // Match CSS transition duration (0.4s)
     }
 
     // Toggle navigation on mobile
-    navToggle.addEventListener('click', () => {
-        const isOpen = navContent.classList.contains('is-open');
+   navToggle.addEventListener('click', () => {
+        const isOpen = mobileMenuOverlay.classList.contains('is-open');
         if (isOpen) {
             closeMobileMenu();
         } else {
-            navContent.classList.add('mobile-nav-active');
-            document.body.style.overflow = 'hidden'; // Disable scrolling on body when menu is open
-            // Ensure menu and buttons are visible for animation
-            navMenu.style.display = 'flex';
-            navButtons.style.display = 'flex';
-            // Use a timeout to allow 'mobile-nav-active' styles to apply before 'is-open' for transition
-            setTimeout(() => {
-                navContent.classList.add('is-open');
-            }, 50); // Small delay
+            openMobileMenu();
         }
     });
 
-    // Close mobile menu when a nav link or button is clicked
-    document.querySelectorAll('.nav-link, .nav-buttons .btn').forEach(linkOrBtn => {
+    // Close mobile menu when a nav link or button inside it is clicked
+    mobileMenuOverlay.querySelectorAll('.nav-link, .btn').forEach(linkOrBtn => {
         linkOrBtn.addEventListener('click', () => {
             if (window.matchMedia('(max-width: 767px)').matches) {
                 closeMobileMenu();
@@ -367,22 +397,40 @@ function initResponsiveNav() {
         });
     });
 
-    // Handle media query changes
+    // Handle media query changes (runs on resize and load)
     const mediaQuery = window.matchMedia('(max-width: 767px)');
     function handleMediaQuery(e) {
-        if (e.matches) { // If mobile
-            navToggle.style.display = 'block'; // Show hamburger
-            closeMobileMenu(); // Ensure menu is closed and hidden
-        } else { // If desktop
+        if (e.matches) { // If currently in mobile view
+            navToggle.style.display = 'block'; // Ensure hamburger is visible
+            // Ensure overlay is hidden by default and elements are ready to be moved
+            mobileMenuOverlay.style.display = 'none';
+            mobileMenuOverlay.classList.remove('is-open'); // Ensure it's not open
+            // Ensure original menu/buttons are hidden in their original desktop positions
+            navMenu.style.display = 'none'; 
+            navButtons.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Ensure body scrolling is enabled by default
+        } else { // If currently in desktop view
             navToggle.style.display = 'none'; // Hide hamburger
-            navContent.classList.remove('mobile-nav-active', 'is-open'); // Remove mobile classes
-            document.body.style.overflow = 'auto'; // Ensure body scrolling is enabled on desktop
-            navMenu.style.display = 'flex'; // Ensure menu is visible
-            navButtons.style.display = 'flex'; // Ensure buttons are visible
+            document.body.style.overflow = 'auto'; // Ensure body scrolling is enabled
+            
+            // Ensure mobile overlay is hidden on desktop
+            mobileMenuOverlay.style.display = 'none';
+            mobileMenuOverlay.classList.remove('is-open'); 
+
+            // Restore navMenu and navButtons to their original places
+            if (originalNavMenuParent && navMenu && !originalNavMenuParent.contains(navMenu)) {
+                originalNavMenuParent.insertBefore(navMenu, originalNavMenuNextSibling);
+            }
+            if (originalNavButtonsParent && navButtons && !originalNavButtonsParent.contains(navButtons)) {
+                originalNavButtonsParent.insertBefore(navButtons, originalNavButtonsNextSibling);
+            }
+            // Ensure they are visible on desktop
+            navMenu.style.display = 'flex';
+            navButtons.style.display = 'flex';
         }
     }
     
-    mediaQuery.addListener(handleMediaQuery);
+    mediaQuery.addListener(handleMediaQuery); // Listen for changes
     handleMediaQuery(mediaQuery); // Call on load to set initial state
 }
 
