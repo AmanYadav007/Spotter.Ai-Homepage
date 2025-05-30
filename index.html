@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identify Every Driver | Spotter AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo-section">
+                    <div class="logo">
+                        <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 944.7 623.7" height="32">
+                            <style>.st0{fill:#008080;}.st1{fill:#F84960;}.st2{fill:#BCDDDE;}</style>
+                            <g id="dots_copy">
+                                <circle class="st0" cx="150" cy="472.7" r="147.4"></circle>
+                                <circle class="st1" cx="150" cy="150.8" r="147.4"></circle>
+                                <circle class="st2" cx="472.3" cy="472.7" r="147.4"></circle>
+                                <circle class="st2" cx="794.7" cy="472.7" r="147.4"></circle>
+                            </g>
+                        </svg>
+                    </div>
+                    <h1 class="brand-name">spotter</h1>
+                </div>
+                <nav class="nav-menu">
+                    <a href="#" class="nav-link">Product</a>
+                    <a href="#" class="nav-link">Use Cases</a>
+                    <a href="#" class="nav-link">Developers</a>
+                    <a href="#" class="nav-link">Resources</a>
+                    <a href="#" class="nav-link">Pricing</a>
+                </nav>
+                <div class="nav-buttons">
+                    <button class="btn btn-ghost">Log in</button>
+                    <button class="btn btn-primary">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Identify Every <span class="gradient-text">Driver</span>
+                </h1>
+                <p class="hero-description">
+                    Stop fraud, detect bots, or delight customers. Identify good and bad drivers with industry-leading accuracy - <strong>even if they're anonymous.</strong>
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary btn-large" id="openModal">See Demo</button>
+                    <button class="btn btn-outline btn-large">Contact Sales</button>
+                </div>
+            </div>
+
+            <!-- Demo Terminal Preview -->
+            <div class="terminal-preview">
+                <div class="terminal-header">
+                    <div class="terminal-controls">
+                        <div class="control-dot red"></div>
+                        <div class="control-dot yellow"></div>
+                        <div class="control-dot green"></div>
+                    </div>
+                    <span class="terminal-title">spotter-intelligence</span>
+                    <div class="live-badge">Live Demo</div>
+                </div>
+                <div class="terminal-content">
+                    <div class="terminal-line">
+                        <span class="prompt">$</span> Welcome to Spotter Intelligence
+                    </div>
+                    <div class="terminal-line driver-line">
+                        <span class="label">Driver:</span>
+                        <span class="driver-id">JohnDoe_TX4891</span>
+                    </div>
+                    <div class="terminal-line comment">
+                        <span class="comment-prefix">///</span> Real-time driver analytics and load matching
+                    </div>
+                    <div class="terminal-line hello-line">
+                        Hello, driver ID <span class="driver-id">JohnDoe_TX4891</span>
+                        <span class="cursor">|</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-value">2,500+</div>
+                    <div class="stat-label">Active Drivers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">💰</div>
+                    <div class="stat-value">45%</div>
+                    <div class="stat-label">Revenue Increase</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">📍</div>
+                    <div class="stat-value">98%</div>
+                    <div class="stat-label">Match Accuracy</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">⏰</div>
+                    <div class="stat-value">24/7</div>
+                    <div class="stat-label">Real-time Tracking</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust">
+        <div class="container">
+            <p class="trust-text">TRUSTED BY 2500+ COMPANIES OF ALL SIZES</p>
+            <div class="trust-companies">
+                <span>FreightTech</span>
+                <span>LogisticsPro</span>
+                <span>TruckFlow</span>
+                <span>CargoLink</span>
+                <span>LoadMatch</span>
+                <span>RouteOptim</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features-header">
+                <h2 class="features-title">
+                    Build <span class="text-teal">safe</span> and <span class="text-accent">seamless</span> products
+                </h2>
+                <p class="features-description">
+                    The device intelligence platform for visitor intent. <strong>Reduce friction</strong> for the good guys. <strong>Stop the bad guys.</strong>
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3 class="feature-title">Load Security</h3>
+                    <p class="feature-description">Identify and prevent fraudulent load bookings while recognizing trusted drivers.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛣️</div>
+                    <h3 class="feature-title">Route Optimization</h3>
+                    <p class="feature-description">AI-powered route matching with driver preferences and real-time market conditions.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3 class="feature-title">Performance Analytics</h3>
+                    <p class="feature-description">Comprehensive insights into driver performance, route efficiency, and revenue trends.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2 class="cta-title">Ready to optimize your logistics?</h2>
+            <p class="cta-description">Join thousands of drivers and logistics companies using Spotter AI to maximize efficiency and revenue.</p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary btn-large" id="openModalCTA">Try Live Demo</button>
+                <button class="btn btn-outline btn-large">Get Started</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo">
+                            <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 944.7 623.7" height="32">
+                                <style>.st0{fill:#008080;}.st1{fill:#F84960;}.st2{fill:#BCDDDE;}</style>
+                                <g id="dots_copy">
+                                    <circle class="st0" cx="150" cy="472.7" r="147.4"></circle>
+                                    <circle class="st1" cx="150" cy="150.8" r="147.4"></circle>
+                                    <circle class="st2" cx="472.3" cy="472.7" r="147.4"></circle>
+                                    <circle class="st2" cx="794.7" cy="472.7" r="147.4"></circle>
+                                </g>
+                            </svg>
+                        </div>
+                        <h3 class="footer-brand">spotter</h3>
+                    </div>
+                    <p class="footer-description">AI-powered logistics intelligence for the modern trucking industry.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Platform</h4>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">Driver Intelligence</a>
+                        <a href="#" class="footer-link">Load Matching</a>
+                        <a href="#" class="footer-link">Route Optimization</a>
+                        <a href="#" class="footer-link">API Access</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Solutions</h4>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">Owner Operators</a>
+                        <a href="#" class="footer-link">Fleet Management</a>
+                        <a href="#" class="footer-link">Freight Brokers</a>
+                        <a href="#" class="footer-link">Logistics Companies</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Company</h4>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">About</a>
+                        <a href="#" class="footer-link">Blog</a>
+                        <a href="#" class="footer-link">Careers</a>
+                        <a href="#" class="footer-link">Contact</a>
+                    </div>
+                </div>
+            </div>
+           </div>
+            <div class="footer-social-app-links">
+                <div class="social-links">
+                    <a href="https://www.facebook.com/spotterai" target="_blank" aria-label="Facebook" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/company/spotter-labs/" target="_blank" aria-label="LinkedIn" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                    <a href="https://x.com/spotter_ai" target="_blank" aria-label="Twitter (X)" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c11 3 21-1 21-11.5a9.13 9.13 0 0 0-.26-3.12A13.25 13.25 0 0 0 23 3z"></path></svg>
+                    </a>
+                </div>
+                <div class="app-links">
+                    <a href="https://extension.spotter.ai/" target="_blank" class="app-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid"><path d="M3 3h7v7H3z"></path><path d="M14 3h7v7h-7z"></path><path d="M14 14h7v7h-7z"></path><path d="M3 14h7v7H3z"></path></svg>
+                        spotter app
+                    </a>
+                    <a href="https://extension.spotter.ai/" target="_blank" class="app-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                        extension
+                    </a>
+                    <a href="https://spotter.ai/lens" target="_blank" class="app-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-target"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                        lens
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Spotter.ai. All rights reserved. Built for the future of logistics.</p>
+            </div>
+        </div>
+    </footer>
+        </div>
+    </footer>
+
+    <!-- Driver Modal -->
+    <div id="driverModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-controls">
+                    <div class="control-dot red"></div>
+                    <div class="control-dot yellow"></div>
+                    <div class="control-dot green"></div>
+                </div>
+                <span class="modal-url">spotter://driver-intelligence</span>
+                <div class="live-badge">LIVE DEMO</div>
+                <button class="modal-close" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- Welcome Terminal -->
+                <div class="welcome-terminal">
+                    <div class="terminal-header">
+                        <span class="terminal-title">spotter-terminal</span>
+                        <span class="terminal-time" id="currentTime"></span>
+                    </div>
+                    <div class="terminal-content">
+                        <div class="terminal-line">
+                            <span class="prompt">$</span> spotter identify driver
+                        </div>
+                        <div class="terminal-line success">✓ Driver authenticated</div>
+                        <div class="terminal-line">
+                            <span id="typedText"></span>
+                            <span class="cursor">|</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Status Cards -->
+                <div class="status-cards" id="statusCards" style="display: none;">
+                    <div class="status-card">
+                        <div class="status-header">
+                            <span class="status-icon">🚛</span>
+                            <span class="status-label">Status</span>
+                        </div>
+                        <div class="status-value available">Available</div>
+                    </div>
+                    <div class="status-card">
+                        <div class="status-header">
+                            <span class="status-icon">📍</span>
+                            <span class="status-label">Location</span>
+                        </div>
+                        <div class="status-value location">Dallas, TX</div>
+                    </div>
+                    <div class="status-card">
+                        <div class="status-header">
+                            <span class="status-icon">⏰</span>
+                            <span class="status-label">Available Loads</span>
+                        </div>
+                        <div class="status-value loads">3 Found</div>
+                    </div>
+                    <div class="status-card">
+                        <div class="status-header">
+                            <span class="status-icon">🛡️</span>
+                            <span class="status-label">Safety Score</span>
+                        </div>
+                        <div class="status-value safety">97.5/100</div>
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="main-content" id="mainContent" style="display: none;">
+                    <div class="content-grid">
+                        <!-- Driver Profile -->
+                        <div class="driver-profile">
+                            <h3 class="section-title">Driver Profile</h3>
+                            <div class="profile-card">
+                                <div class="profile-item">
+                                    <span class="profile-label">Driver ID:</span>
+                                    <span class="profile-value driver-id">DR-9k8mQ2xR7vN3</span>
+                                </div>
+                                <div class="profile-item">
+                                    <span class="profile-label">Name:</span>
+                                    <span class="profile-value">John Martinez</span>
+                                </div>
+                                <div class="profile-item">
+                                    <span class="profile-label">CDL Class:</span>
+                                    <span class="profile-value">Class A</span>
+                                </div>
+                                <div class="profile-item">
+                                    <span class="profile-label">Experience:</span>
+                                    <span class="profile-value">8 years</span>
+                                </div>
+                                <div class="profile-item">
+                                    <span class="profile-label">Equipment:</span>
+                                    <span class="profile-value">53ft Dry Van</span>
+                                </div>
+                            </div>
+
+                            <div class="preferences-card">
+                                <h4 class="preferences-title">Route Preferences</h4>
+                                <div class="preferences-content">
+                                    <div class="preference-group">
+                                        <span class="preference-label">Preferred Routes:</span>
+                                        <div class="route-tags">
+                                            <span class="route-tag preferred">TX → AZ</span>
+                                            <span class="route-tag preferred">TX → CA</span>
+                                            <span class="route-tag preferred">TX → FL</span>
+                                        </div>
+                                    </div>
+                                    <div class="preference-group">
+                                        <span class="preference-label">No-Go Zones:</span>
+                                        <div class="route-tags">
+                                            <span class="route-tag nogo">NYC Metro</span>
+                                            <span class="route-tag nogo">LA Metro</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Available Loads -->
+                        <div class="loads-section">
+                            <h3 class="section-title">AI-Matched Loads</h3>
+                            <div class="loads-list">
+                                <div class="load-card">
+                                    <div class="load-header">
+                                        <div class="load-info">
+                                            <div class="load-id">LOAD-8K92</div>
+                                            <div class="match-score high">Match Score: 96%</div>
+                                        </div>
+                                        <div class="load-payment">
+                                            <div class="load-rate">$3,240</div>
+                                            <div class="load-distance">887 miles</div>
+                                        </div>
+                                    </div>
+                                    <div class="load-details">
+                                        <div class="load-detail">
+                                            <span class="detail-label">Route:</span>
+                                            <span class="detail-value">Dallas, TX → Phoenix, AZ</span>
+                                        </div>
+                                        <div class="load-detail">
+                                            <span class="detail-label">Commodity:</span>
+                                            <span class="detail-value">Electronics</span>
+                                        </div>
+                                        <div class="load-detail">
+                                            <span class="detail-label">Pickup:</span>
+                                            <span class="detail-value">Jan 31, 2025</span>
+                                        </div>
+                                    </div>
+                                    <button class="book-button">Book Load</button>
+                                </div>
+
+                                <div class="load-card">
+                                    <div class="load-header">
+                                        <div class="load-info">
+                                            <div class="load-id">LOAD-7N34</div>
+                                            <div class="match-score medium">Match Score: 88%</div>
+                                        </div>
+                                        <div class="load-payment">
+                                            <div class="load-rate">$3,850</div>
+                                            <div class="load-distance">1350 miles</div>
+                                        </div>
+                                    </div>
+                                    <div class="load-details">
+                                        <div class="load-detail">
+                                            <span class="detail-label">Route:</span>
+                                            <span class="detail-value">Dallas, TX → Los Angeles, CA</span>
+                                        </div>
+                                        <div class="load-detail">
+                                            <span class="detail-label">Commodity:</span>
+                                            <span class="detail-value">Auto Parts</span>
+                                        </div>
+                                        <div class="load-detail">
+                                            <span class="detail-label">Pickup:</span>
+                                            <span class="detail-value">Feb 1, 2025</span>
+                                        </div>
+                                    </div>
+                                    <button class="book-button">Book Load</button>
+                                </div>
+
+                                <div class="load-card">
+                                    <div class="load-header">
+                                        <div class="load-info">
+                                            <div class="load-id">LOAD-5M67</div>
+                                            <div class="match-score low">Match Score: 82%</div>
+                                        </div>
+                                        <div class="load-payment">
+                                            <div class="load-rate">$4,200</div>
+                                            <div class="load-distance">1170 miles</div>
+                                        </div>
+                                    </div>
+                                    <div class="load-details">
+                                        <div class="load-detail">
+                                            <span class="detail-label">Route:</span>
+                                            <span class="detail-value">Dallas, TX → Miami, FL</span>
+                                        </div>
+                                        <div class="load-detail">
+                                            <span class="detail-label">Commodity:</span>
+                                            <span class="detail-value">Consumer Goods</span>
+                                        </div>
+                                        <div class="load-detail">
+                                            <span class="detail-label">Pickup:</span>
+                                            <span class="detail-value">Feb 2, 2025</span>
+                                        </div>
+                                    </div>
+                                    <button class="book-button">Book Load</button>
+                                </div>
+                            </div>
+
+                            <!-- Performance Stats -->
+                            <div class="performance-stats">
+                                <h4 class="stats-title">📈 Performance Analytics</h4>
+                                <div class="stats-grid">
+                                    <div class="stat-item">
+                                        <div class="stat-value">47</div>
+                                        <div class="stat-label">Loads This Month</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-value">$127K</div>
+                                        <div class="stat-label">Monthly Revenue</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-value">4.9</div>
+                                        <div class="stat-label">Broker Rating</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-value">12</div>
+                                        <div class="stat-label">Days Available</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JSON Response -->
+                <div class="json-section" id="jsonSection" style="display: none;">
+                    <div class="json-header">
+                        <span class="json-title">response.json</span>
+                        <div class="json-badges">
+                            <span class="json-badge">Driver Intelligence</span>
+                            <span class="json-badge">Load Matching</span>
+                            <span class="json-badge">Performance Analytics</span>
+                        </div>
+                    </div>
+                    <div class="json-content">
+                        <pre id="jsonResponse"></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
