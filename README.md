@@ -68,6 +68,3 @@ To get a local copy up and running, follow these simple steps.
 Feel free to explore the code and provide any feedback.
 
 ---
-
-**Aman**
-[Your Portfolio Link (e.g., https://www.aguider.in/) ]
